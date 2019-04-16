@@ -1,28 +1,72 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react"
+import { Route, Switch, NavLink } from "react-router-dom"
+import Home from "./Home"
+import Subpage from "./Subpage"
+import TransitionGroup from "react-transition-group/TransitionGroup"
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <div className="TopBar">
+          <div style={{ padding: 20 }}>
+            <NavLink
+              to="/"
+              exact={true}
+              style={{ textDecoration: "none", color: "black" }}
+              activeStyle={{
+                fontWeight: "bold",
+                color: "red",
+                textDecoration: "line-through"
+              }}
+            >
+              {" "}
+              Home{" "}
+            </NavLink>
+            <NavLink
+              to="/subpage"
+              exact={true}
+              style={{ textDecoration: "none", color: "black" }}
+              activeStyle={{
+                fontWeight: "bold",
+                color: "red",
+                textDecoration: "line-through"
+              }}
+            >
+              {" "}
+              Subpage{" "}
+            </NavLink>
+          </div>
+        </div>
+        <Switch>
+          <Route
+            exact
+            path="/"
+            children={({ match, ...rest }) => (
+              <TransitionGroup component={firstChild}>
+                {match && <Home {...rest} />}
+              </TransitionGroup>
+            )}
+          />
+          <Route
+            exact
+            path="/subpage"
+            children={({ match, ...rest }) => (
+              <TransitionGroup component={firstChild}>
+                {match && <Subpage {...rest} />}
+              </TransitionGroup>
+            )}
+          />
+          <Route component={_404} />
+        </Switch>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+const _404 = () => <h1>Not Found</h1>
+const firstChild = props => {
+  const childrenArray = React.Children.toArray(props.children)
+  return childrenArray[0] || null
+}
+export default App
