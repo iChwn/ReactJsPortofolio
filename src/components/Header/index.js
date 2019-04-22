@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { BrowserRouter as Router, NavLink } from "react-router-dom"
+import { ProgresLoadingBar } from "../index"
 import "./styles.css"
 
 export default class Header extends Component {
@@ -45,6 +46,9 @@ export default class Header extends Component {
             </div>
           )
         })}
+        {/* <div style={{ position: "absolute", top: 0, zIndex: 1, width: "100%" }}>
+          <ProgresLoadingBar props={this} />
+        </div> */}
       </div>
     )
   }

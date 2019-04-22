@@ -1,8 +1,10 @@
 import { createStore, combineReducers } from "redux"
 import sampleReducer from "./sampleRedux/reducers"
+import loadingReducer from "./progressLoadPage/reducers"
 
 const reducers = combineReducers({
-  sampleReducer
+  sampleReducer,
+  loadingReducer
 })
 
 function configureStore(state = {}) {
