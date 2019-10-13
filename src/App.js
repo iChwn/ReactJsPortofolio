@@ -20,8 +20,7 @@ class App extends Component {
                 textDecoration: "line-through"
               }}
             >
-              {" "}
-              Home{" "}
+              {" Home "}
             </NavLink>
             <NavLink
               to="/subpage"
@@ -33,8 +32,7 @@ class App extends Component {
                 textDecoration: "line-through"
               }}
             >
-              {" "}
-              Subpage{" "}
+              {" Subpage "}
             </NavLink>
           </div>
         </div>

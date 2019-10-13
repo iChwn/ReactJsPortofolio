@@ -7,7 +7,7 @@ import {
   showLoading,
   hideLoading
 } from "../../models/progressLoadPage/action"
-import configureStore from "../../models/store"
+// import configureStore from "../../models/store"
 
 class AboutPage extends Component {
   componentDidMount() {
@@ -20,13 +20,13 @@ class AboutPage extends Component {
         width++
         this.props.showLoading()
         this.props.progressLoad({ value: `${width}%` })
-        console.log(width)
+        // console.log(width)
       }
     })
   }
 
   render() {
-    console.log(this)
+    // console.log(this)
     return (
       <div className="page">
         <h1>About</h1>

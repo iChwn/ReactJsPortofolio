@@ -32,13 +32,13 @@ class HomeComponent extends Component {
         width++
         this.props.showLoading()
         this.props.progressLoad({ value: `${width}%` })
-        console.log(width)
+        // console.log(width)
       }
     })
   }
 
   componentWillUnmount() {
-    console.log(`ini adalah ${this.state.loadPage}`)
+    // console.log(`ini adalah ${this.state.loadPage}`)
   }
 
   render() {
