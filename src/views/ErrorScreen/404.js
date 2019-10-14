@@ -9,7 +9,7 @@ class _404 extends Component {
           style={{ cursor: "pointer" }}
           onClick={() => this.props.history.goBack()}
         >
-          ERR 404
+          ERROR 404
         </h1>
         <div>
           <Button
